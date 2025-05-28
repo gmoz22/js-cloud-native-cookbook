@@ -1,6 +1,6 @@
 # JavaScript Cloud Native Development Cookbook
 
-Continuously deliver serverless cloud-native solutions on AWS, Azure and GCP
+Continuously deliver serverless cloud-native solutions on AWS, Azure and GCP.
 
 ## Chapters
 1. [Getting Started with Cloud-Native](./ch1)
@@ -17,11 +17,29 @@ Continuously deliver serverless cloud-native solutions on AWS, Azure and GCP
 
 ## Setup Development Environment:
 
-1. Install Node Version Manager: https://github.com/creationix/nvm or https://github.com/coreybutler/nvm-windows
-2. Install Node.js: `nvm install 8`
-3. Install the Serverless Framework: `npm install serverless -g`
+1. Install Node Version Manager (https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script)
+2. Install Node.js with `nvm install` (version 18 minimum)
+3. Install the Serverless Framework with `npm install serverless -g`
 4. Create an AWS account: https://aws.amazon.com/free
 5. Log into AWS and create an IAM user with admin privileges, a password, and an access key: https://serverless.com/framework/docs/providers/aws/guide/credentials#creating-aws-access-keys
-6. Configure the default profile with your access key: `sls config credentials --provider aws --key 1234 --secret 5678`
-7. Create an environment variable to hold your personal development stage: `export MY_STAGE=john <!-- use your name -->`
+6. Configure the default profile with your access key:
+
+`~/.aws/config`
+```
+[default]
+region = us-east-1
+output = json
+```
+
+`~/.aws/credentials`
+
+```
+[default]
+aws_access_key_id = YOUR_AWS_ACCESS_KEY_ID
+aws_secret_access_key = YOUR_AWS_SECRET_ACCESS_KEY
+```
+
+`sls login` to verify credentials work
+
+7. Create an environment variable to hold your personal development stage: `export MY_STAGE=john <!-- use your name -->`, make it permanent in your shell
 8. Install VS Code editor (optional): https://code.visualstudio.com
