@@ -2,10 +2,21 @@ service: cncb-create-function
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs20.x
+  region: us-east-1
+  stage: ${opt:stage, 'dev'}
   environment:
     V1: value1
 
 functions:
   hello:
     handler: handler.hello
+
+resources:
+  Resources:
+    MyBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:service}-${self:provider.stage}-bucket
+        VersioningConfiguration:
+          Status: Enabled
