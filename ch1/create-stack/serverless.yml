@@ -2,3 +2,15 @@ service: cncb-create-stack
 
 provider:
   name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  stage: ${opt:stage, 'dev'}
+
+resources:
+  Resources:
+    MyBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:service}-${self:provider.stage}-bucket
+        VersioningConfiguration:
+          Status: Enabled
