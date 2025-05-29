@@ -1,4 +1,4 @@
-const aws = require('aws-sdk');
+const aws = require('@aws-sdk/client-kinesis');
 const uuid = require('uuid');
 
 module.exports.publish = (event, context, callback) => {
