@@ -11,7 +11,7 @@
 8. `npm run rm:lcl -- -s $MY_STAGE`
 
 ### Useful links
-- AWS Billing and Cost Management https://us-east-1.console.aws.amazon.com/costmanagement/home#/home
+- AWS Billing and Cost Management: https://us-east-1.console.aws.amazon.com/costmanagement/home#/home
 - AWS Kinesis data streams: https://us-east-1.console.aws.amazon.com/kinesis/home?region=us-east-1#/streams/list
 - AWS Lambda functions: https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions/
 - AWS CloudWatch log groups: https://us-east-1.console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups
